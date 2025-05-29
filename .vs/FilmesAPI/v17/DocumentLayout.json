@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Cassiano\\Documents\\Projetos\\FilmesAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{90EBD26C-E9BC-4940-BC1C-9F1510528890}|FilmesAPI\\FilmesAPI.csproj|c:\\users\\cassiano\\documents\\projetos\\filmesapi\\filmesapi\\models\\filme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90EBD26C-E9BC-4940-BC1C-9F1510528890}|FilmesAPI\\FilmesAPI.csproj|solutionrelative:filmesapi\\models\\filme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90EBD26C-E9BC-4940-BC1C-9F1510528890}|FilmesAPI\\FilmesAPI.csproj|c:\\users\\cassiano\\documents\\projetos\\filmesapi\\filmesapi\\helpers\\enums\\generofilme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90EBD26C-E9BC-4940-BC1C-9F1510528890}|FilmesAPI\\FilmesAPI.csproj|solutionrelative:filmesapi\\helpers\\enums\\generofilme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90EBD26C-E9BC-4940-BC1C-9F1510528890}|FilmesAPI\\FilmesAPI.csproj|c:\\users\\cassiano\\documents\\projetos\\filmesapi\\filmesapi\\controllers\\filmecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90EBD26C-E9BC-4940-BC1C-9F1510528890}|FilmesAPI\\FilmesAPI.csproj|solutionrelative:filmesapi\\controllers\\filmecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90EBD26C-E9BC-4940-BC1C-9F1510528890}|FilmesAPI\\FilmesAPI.csproj|c:\\users\\cassiano\\documents\\projetos\\filmesapi\\filmesapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{90EBD26C-E9BC-4940-BC1C-9F1510528890}|FilmesAPI\\FilmesAPI.csproj|solutionrelative:filmesapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Cassiano\\Documents\\Projetos\\FilmesAPI\\FilmesAPI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "FilmesAPI\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Cassiano\\Documents\\Projetos\\FilmesAPI\\FilmesAPI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "FilmesAPI\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-27T01:27:19.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GeneroFilme.cs",
+              "DocumentMoniker": "C:\\Users\\Cassiano\\Documents\\Projetos\\FilmesAPI\\FilmesAPI\\Helpers\\Enums\\GeneroFilme.cs",
+              "RelativeDocumentMoniker": "FilmesAPI\\Helpers\\Enums\\GeneroFilme.cs",
+              "ToolTip": "C:\\Users\\Cassiano\\Documents\\Projetos\\FilmesAPI\\FilmesAPI\\Helpers\\Enums\\GeneroFilme.cs",
+              "RelativeToolTip": "FilmesAPI\\Helpers\\Enums\\GeneroFilme.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T00:58:15.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Filme.cs",
+              "DocumentMoniker": "C:\\Users\\Cassiano\\Documents\\Projetos\\FilmesAPI\\FilmesAPI\\Models\\Filme.cs",
+              "RelativeDocumentMoniker": "FilmesAPI\\Models\\Filme.cs",
+              "ToolTip": "C:\\Users\\Cassiano\\Documents\\Projetos\\FilmesAPI\\FilmesAPI\\Models\\Filme.cs",
+              "RelativeToolTip": "FilmesAPI\\Models\\Filme.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T00:56:15.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FilmeController.cs",
+              "DocumentMoniker": "C:\\Users\\Cassiano\\Documents\\Projetos\\FilmesAPI\\FilmesAPI\\Controllers\\FilmeController.cs",
+              "RelativeDocumentMoniker": "FilmesAPI\\Controllers\\FilmeController.cs",
+              "ToolTip": "C:\\Users\\Cassiano\\Documents\\Projetos\\FilmesAPI\\FilmesAPI\\Controllers\\FilmeController.cs",
+              "RelativeToolTip": "FilmesAPI\\Controllers\\FilmeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T00:52:10.099Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
