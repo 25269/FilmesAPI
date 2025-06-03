@@ -34,3 +34,4 @@ C:\Users\Cassiano\Documents\Projetos\FilmesAPI\FilmesAPI\obj\Debug\net8.0\refint
 C:\Users\Cassiano\Documents\Projetos\FilmesAPI\FilmesAPI\obj\Debug\net8.0\FilmesAPI.pdb
 C:\Users\Cassiano\Documents\Projetos\FilmesAPI\FilmesAPI\obj\Debug\net8.0\FilmesAPI.genruntimeconfig.cache
 C:\Users\Cassiano\Documents\Projetos\FilmesAPI\FilmesAPI\obj\Debug\net8.0\ref\FilmesAPI.dll
+C:\Users\Cassiano\Documents\Projetos\FilmesAPI\FilmesAPI\obj\Debug\net8.0\FilmesAPI.sourcelink.json

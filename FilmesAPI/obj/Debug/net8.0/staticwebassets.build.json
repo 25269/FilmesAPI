@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "swxWrzK7/Hd5fGN/cfV6+VtPZ0PEzwgsQwgid0vjm8I=",
-  "Source": "FilmesAPI",
-  "BasePath": "_content/FilmesAPI",
+  "Hash": "Eqw3F8TODf4gZzpBSCxEpa7V56CYpzFDeDE6ailRvRE=",
+  "Source": "FilmsAPI",
+  "BasePath": "_content/FilmsAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

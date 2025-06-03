@@ -1,15 +1,15 @@
 [
   {
-    "ContainingType": "FilmesAPI.Controllers.FilmeController",
+    "ContainingType": "FilmesAPI.Controllers.FilmController",
     "Method": "AdicionaFilme",
-    "RelativePath": "Filme",
+    "RelativePath": "Film",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "filme",
-        "Type": "FilmesAPI.Models.Filme",
+        "Name": "film",
+        "Type": "FilmesAPI.Models.Film",
         "IsRequired": true
       }
     ],
@@ -17,6 +17,26 @@
       {
         "Type": "System.Void",
         "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FilmesAPI.Controllers.FilmController",
+    "Method": "ReturnFilms",
+    "RelativePath": "Film",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[FilmesAPI.Models.Film, FilmsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       }
     ]

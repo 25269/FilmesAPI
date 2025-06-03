@@ -453,9 +453,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Cassiano\\Documents\\Projetos\\FilmesAPI\\FilmesAPI\\FilmesAPI.csproj",
-      "projectName": "FilmesAPI",
-      "projectPath": "C:\\Users\\Cassiano\\Documents\\Projetos\\FilmesAPI\\FilmesAPI\\FilmesAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Cassiano\\Documents\\Projetos\\FilmesAPI\\FilmesAPI\\FilmsAPI.csproj",
+      "projectName": "FilmsAPI",
+      "projectPath": "C:\\Users\\Cassiano\\Documents\\Projetos\\FilmesAPI\\FilmesAPI\\FilmsAPI.csproj",
       "packagesPath": "C:\\Users\\Cassiano\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Cassiano\\Documents\\Projetos\\FilmesAPI\\FilmesAPI\\obj\\",
       "projectStyle": "PackageReference",
