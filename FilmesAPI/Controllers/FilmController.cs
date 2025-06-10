@@ -38,5 +38,11 @@ namespace FilmesAPI.Controllers
         {
             return films;
         }
+
+        [HttpGet("{id}")]
+        public Film? ReturnFilmsForId(int id)
+        {
+            return films.FirstOrDefault(films => films.IdFilm == id);
+        }
     }
 }

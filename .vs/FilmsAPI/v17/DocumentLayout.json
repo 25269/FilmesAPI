@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "FilmesAPI\\Controllers\\FilmController.cs",
               "ToolTip": "C:\\Users\\Cassiano\\Documents\\Projetos\\FilmesAPI\\FilmesAPI\\Controllers\\FilmController.cs",
               "RelativeToolTip": "FilmesAPI\\Controllers\\FilmController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBkAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAkwC4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-03T00:03:16.853Z",
               "EditorCaption": ""
@@ -55,8 +55,7 @@
               "RelativeToolTip": "FilmesAPI\\Controllers\\SequenceIdController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T01:11:46.053Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T01:11:46.053Z"
             },
             {
               "$type": "Document",
@@ -68,8 +67,7 @@
               "RelativeToolTip": "FilmesAPI\\Models\\SequenceId.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T01:10:25.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T01:10:25.734Z"
             },
             {
               "$type": "Document",
@@ -81,8 +79,7 @@
               "RelativeToolTip": "FilmesAPI\\Helpers\\Enums\\GenreFilm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T00:58:15.191Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-27T00:58:15.191Z"
             },
             {
               "$type": "Document",
@@ -94,8 +91,7 @@
               "RelativeToolTip": "FilmesAPI\\Models\\Film.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T00:56:15.164Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-27T00:56:15.164Z"
             }
           ]
         }

@@ -40,5 +40,31 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "FilmesAPI.Controllers.FilmController",
+    "Method": "ReturnFilmsForId",
+    "RelativePath": "Film/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FilmesAPI.Models.Film",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
