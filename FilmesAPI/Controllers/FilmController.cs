@@ -14,7 +14,7 @@ namespace FilmesAPI.Controllers
         private int parmId;
 
         [HttpPost]
-        public void AdicionaFilme([FromBody] Film film)
+        public IActionResult AdicionaFilme([FromBody] Film film)
         {
             sequenceIdController  = new SequenceIdController();
 
@@ -30,19 +30,28 @@ namespace FilmesAPI.Controllers
                 films.Add(film);
             }
 
-            Console.WriteLine($"Título: {film.Titulo} - Gênero: {film.Genero.ToString()}");
+            //Console.WriteLine($"Título: {film.Titulo} - Gênero: {film.Genero.ToString()}");
+
+            return CreatedAtAction (nameof(ReturnFilmsForId), new { id = film.IdFilm }, film);
         }
 
         [HttpGet]
-        public List<Film> ReturnFilms()
+        public IEnumerable<Film> ReturnFilms([FromQuery] int skip = 0, [FromQuery] int take = 5)
         {
-            return films;
+            return films.Skip(skip).Take(take);
         }
 
         [HttpGet("{id}")]
-        public Film? ReturnFilmsForId(int id)
+        public IActionResult ReturnFilmsForId(int id)
         {
-            return films.FirstOrDefault(films => films.IdFilm == id);
+            var film = films.FirstOrDefault(films => films.IdFilm == id);
+
+            if(film == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(film);
         }
     }
 }
