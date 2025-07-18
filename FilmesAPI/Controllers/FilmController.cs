@@ -1,6 +1,11 @@
-﻿using FilmesAPI.Models;
-using FilmsAPI.Controllers;
+﻿using AutoMapper;
+using FilmesAPI.Helpers.Enums;
+using FilmesAPI.Models;
+using FilmsAPI.Data;
+using FilmsAPI.Data.DTOs;
 using FilmsAPI.Models;
+using FilmsAPI.Profiles;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FilmesAPI.Controllers
@@ -9,49 +14,102 @@ namespace FilmesAPI.Controllers
     [Route("[controller]")]
     public class FilmController : ControllerBase
     {
-        private static List<Film> films = new List<Film>();
-        private static SequenceIdController sequenceIdController;
-        private int parmId;
+        private FilmContext _filmContext;
+        private IMapper _mapper;
+
+        public FilmController(FilmContext filmContext, IMapper mapper)
+        {
+            _filmContext = filmContext;
+            _mapper = mapper;
+        }
 
         [HttpPost]
-        public IActionResult AdicionaFilme([FromBody] Film film)
+        public IActionResult AddFilm([FromBody] CreateFilmDTO filmDTO)
         {
-            sequenceIdController  = new SequenceIdController();
+            Film film = _mapper.Map<Film>(filmDTO);
 
-            if (films.Count > 0)
-            {
-                parmId = films.Max(film => film.IdFilm);
-                film.IdFilm = sequenceIdController.SequenceIdIncrement(parmId);
-                films.Add(film);
-            }
-            else
-            {
-                film.IdFilm = sequenceIdController.SequenceIdIncrement(parmId);
-                films.Add(film);
-            }
+            _filmContext.Films.Add(film);  
+            _filmContext.SaveChanges();
 
-            //Console.WriteLine($"Título: {film.Titulo} - Gênero: {film.Genero.ToString()}");
-
-            return CreatedAtAction (nameof(ReturnFilmsForId), new { id = film.IdFilm }, film);
+            return CreatedAtAction (nameof(ReturnFilmsForId), new { id = _filmContext.ContextId }, film);
         }
 
         [HttpGet]
-        public IEnumerable<Film> ReturnFilms([FromQuery] int skip = 0, [FromQuery] int take = 5)
+        public IEnumerable<ReadFilmDTO> ReturnFilms([FromQuery] int skip = 0, [FromQuery] int take = 5)
         {
-            return films.Skip(skip).Take(take);
+            return _mapper.Map<List<ReadFilmDTO>>(_filmContext.Films.Skip(skip).Take(take));
         }
 
         [HttpGet("{id}")]
         public IActionResult ReturnFilmsForId(int id)
         {
-            var film = films.FirstOrDefault(films => films.IdFilm == id);
+            var film = _filmContext.Films.FirstOrDefault(films => films.IdFilm == id);
 
             if(film == null)
             {
                 return NotFound();
             }
 
-            return Ok(film);
+            var filmDTO = _mapper.Map<ReadFilmDTO>(film);
+
+            return Ok(filmDTO);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateFilm (int id, [FromBody] UpdateFilmDTO filmDTO)
+        {
+            var film = _filmContext.Films.FirstOrDefault(film => film.IdFilm == id);
+
+            if(film == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(filmDTO, film);
+            _filmContext.SaveChanges();
+
+            return NoContent();
+        }
+
+        [HttpPatch("{id}")]
+        public IActionResult UpdateFilmPatch (int id, JsonPatchDocument<UpdateFilmDTO> patch)
+        {
+            var film = _filmContext.Films.FirstOrDefault(film => film.IdFilm == id);
+
+            if (film == null)
+            {
+                return NotFound();
+            }
+
+            var updateFilm = _mapper.Map<UpdateFilmDTO>(film);
+
+            patch.ApplyTo(updateFilm, ModelState);
+
+            if (!TryValidateModel(updateFilm))
+            {
+                return ValidationProblem(ModelState);
+            }
+
+            _mapper.Map(updateFilm, film);
+            _filmContext.SaveChanges();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteFilm(int id)
+        {
+            var film = _filmContext.Films.FirstOrDefault(film => film.IdFilm == id);
+
+            if (film == null)
+            {
+                return NotFound();
+            }
+
+            _filmContext.Remove(film);
+            _filmContext.SaveChanges();
+
+            return NoContent();
         }
     }
 }
