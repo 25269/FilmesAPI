@@ -2,7 +2,7 @@
   "openapi": "3.0.4",
   "info": {
     "title": "FilmsAPI",
-    "version": "v1"
+    "version": "V1"
   },
   "paths": {
     "/Film": {
@@ -39,9 +39,6 @@
         "responses": {
           "201": {
             "description": "Caso a inserção seja feita com sucesso"
-          },
-          "404": {
-            "description": "Caso a tentativa de inserção seja feita com a falta de dados obrigatórios"
           }
         }
       },
@@ -49,12 +46,10 @@
         "tags": [
           "Film"
         ],
-        "summary": "Retorna todos os filmes cadastrados",
         "parameters": [
           {
             "name": "skip",
             "in": "query",
-            "description": "Quantidade máxima de registros a serem buscados",
             "schema": {
               "type": "integer",
               "format": "int32",
@@ -64,7 +59,6 @@
           {
             "name": "take",
             "in": "query",
-            "description": "Posição em que deseja iniciar a busca dos registros com base nos IDs dos filmes",
             "schema": {
               "type": "integer",
               "format": "int32",
@@ -74,7 +68,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Retorna os filmes esperados",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -101,9 +95,6 @@
                 }
               }
             }
-          },
-          "404": {
-            "description": "Caso não exista nenhum filme"
           }
         }
       }
@@ -113,12 +104,10 @@
         "tags": [
           "Film"
         ],
-        "summary": "Retorna o filme cadastrado conforme o Id utilizado como parâmetro",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "Código do filme",
             "required": true,
             "schema": {
               "type": "integer",
@@ -128,10 +117,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Retorna o filme esperado"
-          },
-          "404": {
-            "description": "Caso não exista nenhum filme com o código passado"
+            "description": "OK"
           }
         }
       },
@@ -139,12 +125,10 @@
         "tags": [
           "Film"
         ],
-        "summary": "Atualiza o filme referente ao Id passado como parâmetro",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "Código do filme",
             "required": true,
             "schema": {
               "type": "integer",
@@ -153,7 +137,6 @@
           }
         ],
         "requestBody": {
-          "description": "",
           "content": {
             "application/json-patch+json": {
               "schema": {
@@ -180,12 +163,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "204": {
-            "description": "Confirma a atualização do filme"
-          },
-          "404": {
-            "description": "Caso deixe de preencher algum campo obrigatório para atualização"
           }
         }
       },
@@ -193,12 +170,10 @@
         "tags": [
           "Film"
         ],
-        "summary": "Atualiza o filme referente ao Id passado como parâmetro",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "Código do filme",
             "required": true,
             "schema": {
               "type": "integer",
@@ -207,7 +182,6 @@
           }
         ],
         "requestBody": {
-          "description": "",
           "content": {
             "application/json-patch+json": {
               "schema": {
@@ -246,9 +220,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "204": {
-            "description": "Confirma a atualização do filme"
           }
         }
       },
@@ -256,12 +227,10 @@
         "tags": [
           "Film"
         ],
-        "summary": "Exclusão do filme referente ao Id passado como parâmetro",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "Código do filme a ser excluído",
             "required": true,
             "schema": {
               "type": "integer",
@@ -271,10 +240,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Confirma a exclusão do filme"
-          },
-          "404": {
-            "description": "Caso não exista nenhum filme com o código passado"
+            "description": "OK"
           }
         }
       }

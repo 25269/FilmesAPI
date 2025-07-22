@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FilmsAPI</name>
+    </assembly>
+    <members>
+        <member name="M:FilmesAPI.Controllers.FilmController.AddFilm(FilmsAPI.Data.DTOs.CreateFilmDTO)">
+            <summary>
+            Criação de novos filmes (podendo ser passado um ou N filmes de uma única vez)
+            </summary>
+            <param name="filmDTO"></param>
+            <returns>IActionResult</returns>
+            <response code="201">Caso a inserção seja feita com sucesso</response>
+            <response code="404">Caso a tentativa de inserção seja feita com a falta de dados obrigatórios</response>
+        </member>
+        <member name="M:FilmesAPI.Controllers.FilmController.ReturnFilms(System.Int32,System.Int32)">
+            <summary>
+            Retorna todos os filmes cadastrados
+            </summary>
+            <param name="skip">Quantidade máxima de registros a serem buscados</param>
+            <param name="take">Posição em que deseja iniciar a busca dos registros com base nos IDs dos filmes</param>
+            <response code="200">Retorna os filmes esperados</response>
+            <response code="404">Caso não exista nenhum filme</response>
+        </member>
+        <member name="M:FilmesAPI.Controllers.FilmController.ReturnFilmsForId(System.Int32)">
+            <summary>
+            Retorna o filme cadastrado conforme o Id utilizado como parâmetro
+            </summary>
+            <param name="id">Código do filme</param>
+            <response code="200">Retorna o filme esperado</response>
+            <response code="404">Caso não exista nenhum filme com o código passado</response>
+        </member>
+        <member name="M:FilmesAPI.Controllers.FilmController.UpdateFilm(System.Int32,FilmsAPI.Data.DTOs.UpdateFilmDTO)">
+            <summary>
+            Atualiza o filme referente ao Id passado como parâmetro
+            </summary>
+            <param name="id">Código do filme</param>
+            <param name="filmDTO"></param>
+            <response code="204">Confirma a atualização do filme</response>
+            <response code="404">Caso deixe de preencher algum campo obrigatório para atualização</response>
+        </member>
+        <member name="M:FilmesAPI.Controllers.FilmController.UpdateFilmPatch(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{FilmsAPI.Data.DTOs.UpdateFilmDTO})">
+            <summary>
+            Atualiza o filme referente ao Id passado como parâmetro
+            </summary>
+            <param name="id">Código do filme</param>
+            <param name="patch"></param>
+            <response code="204">Confirma a atualização do filme</response>
+        </member>
+        <member name="M:FilmesAPI.Controllers.FilmController.DeleteFilm(System.Int32)">
+            <summary>
+            Exclusão do filme referente ao Id passado como parâmetro
+            </summary>
+            <param name="id">Código do filme a ser excluído</param>
+            <response code="200">Confirma a exclusão do filme</response>
+            <response code="404">Caso não exista nenhum filme com o código passado</response>
+        </member>
+        <member name="T:FilmsAPI.Migrations.CreateTableFilms">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.CreateTableFilms.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.CreateTableFilms.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.CreateTableFilms.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
