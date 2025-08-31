@@ -1,6 +1,218 @@
 [
   {
-    "ContainingType": "FilmesAPI.Controllers.FilmController",
+    "ContainingType": "FilmsAPI.Controllers.AddressController",
+    "Method": "AddAddress",
+    "RelativePath": "Address",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addressDTO",
+        "Type": "FilmsAPI.Data.DTOs.CreateAddressDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.AddressController",
+    "Method": "ReadAddresses",
+    "RelativePath": "Address",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "skip",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "take",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[FilmsAPI.Data.DTOs.ReadAddressDTO, FilmsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.AddressController",
+    "Method": "ReturnAddressForId",
+    "RelativePath": "Address/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.AddressController",
+    "Method": "UpdateAddress",
+    "RelativePath": "Address/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "addressDTO",
+        "Type": "FilmsAPI.Data.DTOs.UpdateAddressDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.AddressController",
+    "Method": "DeleteAddress",
+    "RelativePath": "Address/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.CinemaController",
+    "Method": "AddCinema",
+    "RelativePath": "Cinema",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cinemaDTO",
+        "Type": "FilmsAPI.Data.DTOs.CreateCinemaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.CinemaController",
+    "Method": "ReturnCinemas",
+    "RelativePath": "Cinema",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "skip",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "take",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[FilmsAPI.Data.DTOs.ReadCinemaDTO, FilmsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.CinemaController",
+    "Method": "ReturnCinemasForId",
+    "RelativePath": "Cinema/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.CinemaController",
+    "Method": "UpdateCinema",
+    "RelativePath": "Cinema/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "cinemaDTO",
+        "Type": "FilmsAPI.Data.DTOs.UpdateFilmDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.CinemaController",
+    "Method": "DeleteCinema",
+    "RelativePath": "Cinema/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.FilmController",
     "Method": "AddFilm",
     "RelativePath": "Film",
     "HttpMethod": "POST",
@@ -22,7 +234,7 @@
     ]
   },
   {
-    "ContainingType": "FilmesAPI.Controllers.FilmController",
+    "ContainingType": "FilmsAPI.Controllers.FilmController",
     "Method": "ReturnFilms",
     "RelativePath": "Film",
     "HttpMethod": "GET",
@@ -53,7 +265,7 @@
     ]
   },
   {
-    "ContainingType": "FilmesAPI.Controllers.FilmController",
+    "ContainingType": "FilmsAPI.Controllers.FilmController",
     "Method": "ReturnFilmsForId",
     "RelativePath": "Film/{id}",
     "HttpMethod": "GET",
@@ -69,7 +281,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FilmesAPI.Controllers.FilmController",
+    "ContainingType": "FilmsAPI.Controllers.FilmController",
     "Method": "UpdateFilm",
     "RelativePath": "Film/{id}",
     "HttpMethod": "PUT",
@@ -90,7 +302,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FilmesAPI.Controllers.FilmController",
+    "ContainingType": "FilmsAPI.Controllers.FilmController",
     "Method": "UpdateFilmPatch",
     "RelativePath": "Film/{id}",
     "HttpMethod": "PATCH",
@@ -111,10 +323,79 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FilmesAPI.Controllers.FilmController",
+    "ContainingType": "FilmsAPI.Controllers.FilmController",
     "Method": "DeleteFilm",
     "RelativePath": "Film/{id}",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.SessionController",
+    "Method": "AddSession",
+    "RelativePath": "Session",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sessionDTO",
+        "Type": "FilmsAPI.Data.DTOs.CreateSessionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.SessionController",
+    "Method": "ReadSessions",
+    "RelativePath": "Session",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "skip",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "take",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[FilmsAPI.Data.DTOs.ReadSessionDTO, FilmsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.SessionController",
+    "Method": "ReturnSessionForId",
+    "RelativePath": "Session/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [

@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
-using FilmesAPI.Helpers.Enums;
+using FilmsAPI.Helpers.Enums;
 using Microsoft.EntityFrameworkCore;
 
-namespace FilmesAPI.Models
+namespace FilmsAPI.Models
 {
     public class Film
     {
@@ -11,5 +11,6 @@ namespace FilmesAPI.Models
         public int IdFilm { get; set; }
         public string Title { get; set; }
         public GenreFilm Genre { get; set; }
+        public virtual ICollection<Session> Sessions { get; set; }
     }
 }

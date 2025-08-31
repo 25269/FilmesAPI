@@ -1,4 +1,4 @@
-﻿using FilmesAPI.Helpers.Enums;
+﻿using FilmsAPI.Helpers.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace FilmsAPI.Data.DTOs

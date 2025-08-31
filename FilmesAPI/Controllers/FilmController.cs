@@ -1,14 +1,13 @@
 ﻿using AutoMapper;
-using FilmesAPI.Helpers.Enums;
-using FilmesAPI.Models;
+using FilmsAPI.Helpers.Enums;
+using FilmsAPI.Models;
 using FilmsAPI.Data;
 using FilmsAPI.Data.DTOs;
-using FilmsAPI.Models;
 using FilmsAPI.Profiles;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FilmesAPI.Controllers
+namespace FilmsAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -54,7 +53,7 @@ namespace FilmesAPI.Controllers
         [HttpGet]
         public IEnumerable<ReadFilmDTO> ReturnFilms([FromQuery] int skip = 0, [FromQuery] int take = 5)
         {
-            return _mapper.Map<List<ReadFilmDTO>>(_filmContext.Films.Skip(skip).Take(take));
+            return _mapper.Map<List<ReadFilmDTO>>(_filmContext.Films.Skip(skip).Take(take).ToList());
         }
 
         /// <summary>

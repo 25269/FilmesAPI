@@ -1,4 +1,4 @@
-﻿namespace FilmesAPI.Helpers.Enums
+﻿namespace FilmsAPI.Helpers.Enums
 {
     public enum GenreFilm : int
     {

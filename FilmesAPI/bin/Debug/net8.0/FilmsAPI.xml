@@ -4,7 +4,93 @@
         <name>FilmsAPI</name>
     </assembly>
     <members>
-        <member name="M:FilmesAPI.Controllers.FilmController.AddFilm(FilmsAPI.Data.DTOs.CreateFilmDTO)">
+        <member name="M:FilmsAPI.Controllers.AddressController.AddAddress(FilmsAPI.Data.DTOs.CreateAddressDTO)">
+            <summary>
+            Criação de novos endereços (podendo ser passado um ou N endereços de uma única vez)
+            </summary>
+            <param name="addressDTO"></param>
+            <returns>IActionResult</returns>
+            <response code="201">Caso a inserção seja feita com sucesso</response>
+            <response code="404">Caso a tentativa de inserção seja feita com a falta de dados obrigatórios</response>
+        </member>
+        <member name="M:FilmsAPI.Controllers.AddressController.ReadAddresses(System.Int32,System.Int32)">
+            <summary>
+            Retorna todos os endereços cadastrados
+            </summary>
+            <param name="skip">Quantidade máxima de registros a serem buscados</param>
+            <param name="take">Posição em que deseja iniciar a busca dos registros com base nos IDs dos endereços</param>
+            <response code="200">Retorna os endereços esperados</response>
+            <response code="404">Caso não exista nenhum endereço</response>
+        </member>
+        <member name="M:FilmsAPI.Controllers.AddressController.ReturnAddressForId(System.Int32)">
+            <summary>
+            Retorna o endereço cadastrado conforme o Id utilizado como parâmetro
+            </summary>
+            <param name="id">Código do endereço</param>
+            <response code="200">Retorna o endereço esperado</response>
+            <response code="404">Caso não exista nenhum endereço com o código passado</response>
+        </member>
+        <member name="M:FilmsAPI.Controllers.AddressController.UpdateAddress(System.Int32,FilmsAPI.Data.DTOs.UpdateAddressDTO)">
+            <summary>
+            Atualiza o endereço referente ao Id passado como parâmetro
+            </summary>
+            <param name="id">Código do endereço</param>
+            <param name="addressDTO"></param>
+            <response code="204">Confirma a atualização do endereço</response>
+            <response code="404">Caso deixe de preencher algum campo obrigatório para atualização</response>
+        </member>
+        <member name="M:FilmsAPI.Controllers.AddressController.DeleteAddress(System.Int32)">
+            <summary>
+            Exclusão do endereço referente ao Id passado como parâmetro
+            </summary>
+            <param name="id">Código do endereço a ser excluído</param>
+            <response code="200">Confirma a exclusão do endereço</response>
+            <response code="404">Caso não exista nenhum endereço com o código passado</response>
+        </member>
+        <member name="M:FilmsAPI.Controllers.CinemaController.AddCinema(FilmsAPI.Data.DTOs.CreateCinemaDTO)">
+            <summary>
+            Criação de novos cinemas (podendo ser passado um ou N cinemas de uma única vez)
+            </summary>
+            <param name="cinemaDTO"></param>
+            <returns>IActionResult</returns>
+            <response code="201">Caso a inserção seja feita com sucesso</response>
+            <response code="404">Caso a tentativa de inserção seja feita com a falta de dados obrigatórios</response>
+        </member>
+        <member name="M:FilmsAPI.Controllers.CinemaController.ReturnCinemas(System.Int32,System.Int32)">
+            <summary>
+            Retorna todos os cinemas cadastrados
+            </summary>
+            <param name="skip">Quantidade máxima de registros a serem buscados</param>
+            <param name="take">Posição em que deseja iniciar a busca dos registros com base nos IDs dos cinemas</param>
+            <response code="200">Retorna os cinemas esperados</response>
+            <response code="404">Caso não exista nenhum cinema</response>
+        </member>
+        <member name="M:FilmsAPI.Controllers.CinemaController.ReturnCinemasForId(System.Int32)">
+            <summary>
+            Retorna o cinema cadastrado conforme o Id utilizado como parâmetro
+            </summary>
+            <param name="id">Código do cinema</param>
+            <response code="200">Retorna o cinema esperado</response>
+            <response code="404">Caso não exista nenhum cinema com o código passado</response>
+        </member>
+        <member name="M:FilmsAPI.Controllers.CinemaController.UpdateCinema(System.Int32,FilmsAPI.Data.DTOs.UpdateFilmDTO)">
+            <summary>
+            Atualiza o cinema referente ao Id passado como parâmetro
+            </summary>
+            <param name="id">Código do cinema</param>
+            <param name="cinemaDTO"></param>
+            <response code="204">Confirma a atualização do cinema</response>
+            <response code="404">Caso deixe de preencher algum campo obrigatório para atualização</response>
+        </member>
+        <member name="M:FilmsAPI.Controllers.CinemaController.DeleteCinema(System.Int32)">
+            <summary>
+            Exclusão do cinema referente ao Id passado como parâmetro
+            </summary>
+            <param name="id">Código do cinema a ser excluído</param>
+            <response code="200">Confirma a exclusão do cinema</response>
+            <response code="404">Caso não exista nenhum cinema com o código passado</response>
+        </member>
+        <member name="M:FilmsAPI.Controllers.FilmController.AddFilm(FilmsAPI.Data.DTOs.CreateFilmDTO)">
             <summary>
             Criação de novos filmes (podendo ser passado um ou N filmes de uma única vez)
             </summary>
@@ -13,7 +99,7 @@
             <response code="201">Caso a inserção seja feita com sucesso</response>
             <response code="404">Caso a tentativa de inserção seja feita com a falta de dados obrigatórios</response>
         </member>
-        <member name="M:FilmesAPI.Controllers.FilmController.ReturnFilms(System.Int32,System.Int32)">
+        <member name="M:FilmsAPI.Controllers.FilmController.ReturnFilms(System.Int32,System.Int32)">
             <summary>
             Retorna todos os filmes cadastrados
             </summary>
@@ -22,7 +108,7 @@
             <response code="200">Retorna os filmes esperados</response>
             <response code="404">Caso não exista nenhum filme</response>
         </member>
-        <member name="M:FilmesAPI.Controllers.FilmController.ReturnFilmsForId(System.Int32)">
+        <member name="M:FilmsAPI.Controllers.FilmController.ReturnFilmsForId(System.Int32)">
             <summary>
             Retorna o filme cadastrado conforme o Id utilizado como parâmetro
             </summary>
@@ -30,7 +116,7 @@
             <response code="200">Retorna o filme esperado</response>
             <response code="404">Caso não exista nenhum filme com o código passado</response>
         </member>
-        <member name="M:FilmesAPI.Controllers.FilmController.UpdateFilm(System.Int32,FilmsAPI.Data.DTOs.UpdateFilmDTO)">
+        <member name="M:FilmsAPI.Controllers.FilmController.UpdateFilm(System.Int32,FilmsAPI.Data.DTOs.UpdateFilmDTO)">
             <summary>
             Atualiza o filme referente ao Id passado como parâmetro
             </summary>
@@ -39,7 +125,7 @@
             <response code="204">Confirma a atualização do filme</response>
             <response code="404">Caso deixe de preencher algum campo obrigatório para atualização</response>
         </member>
-        <member name="M:FilmesAPI.Controllers.FilmController.UpdateFilmPatch(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{FilmsAPI.Data.DTOs.UpdateFilmDTO})">
+        <member name="M:FilmsAPI.Controllers.FilmController.UpdateFilmPatch(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{FilmsAPI.Data.DTOs.UpdateFilmDTO})">
             <summary>
             Atualiza o filme referente ao Id passado como parâmetro
             </summary>
@@ -47,13 +133,39 @@
             <param name="patch"></param>
             <response code="204">Confirma a atualização do filme</response>
         </member>
-        <member name="M:FilmesAPI.Controllers.FilmController.DeleteFilm(System.Int32)">
+        <member name="M:FilmsAPI.Controllers.FilmController.DeleteFilm(System.Int32)">
             <summary>
             Exclusão do filme referente ao Id passado como parâmetro
             </summary>
             <param name="id">Código do filme a ser excluído</param>
             <response code="200">Confirma a exclusão do filme</response>
             <response code="404">Caso não exista nenhum filme com o código passado</response>
+        </member>
+        <member name="M:FilmsAPI.Controllers.SessionController.AddSession(FilmsAPI.Data.DTOs.CreateSessionDTO)">
+            <summary>
+            Criação de novas sessões (podendo ser passado um ou N sessões de uma única vez)
+            </summary>
+            <param name="sessionDTO"></param>
+            <returns>IActionResult</returns>
+            <response code="201">Caso a inserção seja feita com sucesso</response>
+            <response code="404">Caso a tentativa de inserção seja feita com a falta de dados obrigatórios</response>
+        </member>
+        <member name="M:FilmsAPI.Controllers.SessionController.ReadSessions(System.Int32,System.Int32)">
+            <summary>
+            Retorna todas as sessões cadastradas
+            </summary>
+            <param name="skip">Quantidade máxima de registros a serem buscados</param>
+            <param name="take">Posição em que deseja iniciar a busca dos registros com base nos IDs das sessões</param>
+            <response code="200">Retorna as sessões esperadas</response>
+            <response code="404">Caso não exista nenhuma sessão</response>
+        </member>
+        <member name="M:FilmsAPI.Controllers.SessionController.ReturnSessionForId(System.Int32)">
+            <summary>
+            Retorna a sessão cadastrada conforme o Id utilizado como parâmetro
+            </summary>
+            <param name="id">Código da sessão</param>
+            <response code="200">Retorna a sessão esperado</response>
+            <response code="404">Caso não exista nenhuma sessão com o código passado</response>
         </member>
         <member name="T:FilmsAPI.Migrations.CreateTableFilms">
             <inheritdoc />
@@ -65,6 +177,30 @@
             <inheritdoc />
         </member>
         <member name="M:FilmsAPI.Migrations.CreateTableFilms.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:FilmsAPI.Migrations.CinemaandAddress">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.CinemaandAddress.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.CinemaandAddress.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.CinemaandAddress.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:FilmsAPI.Migrations.SessionCinemaandFilm">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.SessionCinemaandFilm.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.SessionCinemaandFilm.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.SessionCinemaandFilm.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

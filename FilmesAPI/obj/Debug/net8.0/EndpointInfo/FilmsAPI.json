@@ -5,6 +5,428 @@
     "version": "v1"
   },
   "paths": {
+    "/Address": {
+      "post": {
+        "tags": [
+          "Address"
+        ],
+        "summary": "Criação de novos endereços (podendo ser passado um ou N endereços de uma única vez)",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAddressDTO"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAddressDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAddressDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAddressDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Caso a inserção seja feita com sucesso"
+          },
+          "404": {
+            "description": "Caso a tentativa de inserção seja feita com a falta de dados obrigatórios"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Address"
+        ],
+        "summary": "Retorna todos os endereços cadastrados",
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Quantidade máxima de registros a serem buscados",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "Posição em que deseja iniciar a busca dos registros com base nos IDs dos endereços",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 5
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os endereços esperados",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReadAddressDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReadAddressDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReadAddressDTO"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Caso não exista nenhum endereço"
+          }
+        }
+      }
+    },
+    "/Address/{id}": {
+      "get": {
+        "tags": [
+          "Address"
+        ],
+        "summary": "Retorna o endereço cadastrado conforme o Id utilizado como parâmetro",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Código do endereço",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna o endereço esperado"
+          },
+          "404": {
+            "description": "Caso não exista nenhum endereço com o código passado"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Address"
+        ],
+        "summary": "Atualiza o endereço referente ao Id passado como parâmetro",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Código do endereço",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAddressDTO"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAddressDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAddressDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAddressDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "Confirma a atualização do endereço"
+          },
+          "404": {
+            "description": "Caso deixe de preencher algum campo obrigatório para atualização"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Address"
+        ],
+        "summary": "Exclusão do endereço referente ao Id passado como parâmetro",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Código do endereço a ser excluído",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Confirma a exclusão do endereço"
+          },
+          "404": {
+            "description": "Caso não exista nenhum endereço com o código passado"
+          }
+        }
+      }
+    },
+    "/Cinema": {
+      "post": {
+        "tags": [
+          "Cinema"
+        ],
+        "summary": "Criação de novos cinemas (podendo ser passado um ou N cinemas de uma única vez)",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCinemaDTO"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCinemaDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCinemaDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCinemaDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Caso a inserção seja feita com sucesso"
+          },
+          "404": {
+            "description": "Caso a tentativa de inserção seja feita com a falta de dados obrigatórios"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Cinema"
+        ],
+        "summary": "Retorna todos os cinemas cadastrados",
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Quantidade máxima de registros a serem buscados",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "Posição em que deseja iniciar a busca dos registros com base nos IDs dos cinemas",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 5
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os cinemas esperados",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReadCinemaDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReadCinemaDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReadCinemaDTO"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Caso não exista nenhum cinema"
+          }
+        }
+      }
+    },
+    "/Cinema/{id}": {
+      "get": {
+        "tags": [
+          "Cinema"
+        ],
+        "summary": "Retorna o cinema cadastrado conforme o Id utilizado como parâmetro",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Código do cinema",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna o cinema esperado"
+          },
+          "404": {
+            "description": "Caso não exista nenhum cinema com o código passado"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Cinema"
+        ],
+        "summary": "Atualiza o cinema referente ao Id passado como parâmetro",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Código do cinema",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFilmDTO"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFilmDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFilmDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFilmDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "Confirma a atualização do cinema"
+          },
+          "404": {
+            "description": "Caso deixe de preencher algum campo obrigatório para atualização"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Cinema"
+        ],
+        "summary": "Exclusão do cinema referente ao Id passado como parâmetro",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Código do cinema a ser excluído",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Confirma a exclusão do cinema"
+          },
+          "404": {
+            "description": "Caso não exista nenhum cinema com o código passado"
+          }
+        }
+      }
+    },
     "/Film": {
       "post": {
         "tags": [
@@ -278,10 +700,172 @@
           }
         }
       }
+    },
+    "/Session": {
+      "post": {
+        "tags": [
+          "Session"
+        ],
+        "summary": "Criação de novas sessões (podendo ser passado um ou N sessões de uma única vez)",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSessionDTO"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSessionDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSessionDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSessionDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Caso a inserção seja feita com sucesso"
+          },
+          "404": {
+            "description": "Caso a tentativa de inserção seja feita com a falta de dados obrigatórios"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Session"
+        ],
+        "summary": "Retorna todas as sessões cadastradas",
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Quantidade máxima de registros a serem buscados",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "Posição em que deseja iniciar a busca dos registros com base nos IDs das sessões",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 5
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna as sessões esperadas",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReadSessionDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReadSessionDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReadSessionDTO"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Caso não exista nenhuma sessão"
+          }
+        }
+      }
+    },
+    "/Session/{id}": {
+      "get": {
+        "tags": [
+          "Session"
+        ],
+        "summary": "Retorna a sessão cadastrada conforme o Id utilizado como parâmetro",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Código da sessão",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna a sessão esperado"
+          },
+          "404": {
+            "description": "Caso não exista nenhuma sessão com o código passado"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "CreateAddressDTO": {
+        "type": "object",
+        "properties": {
+          "publicSpace": {
+            "type": "string",
+            "nullable": true
+          },
+          "number": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateCinemaDTO": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "addressId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateFilmDTO": {
         "required": [
           "genre",
@@ -295,6 +879,20 @@
           },
           "genre": {
             "$ref": "#/components/schemas/GenreFilm"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateSessionDTO": {
+        "type": "object",
+        "properties": {
+          "idFilm": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idCinema": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -348,9 +946,55 @@
         "type": "integer",
         "format": "int32"
       },
+      "ReadAddressDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "publicSpace": {
+            "type": "string",
+            "nullable": true
+          },
+          "number": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReadCinemaDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "$ref": "#/components/schemas/ReadAddressDTO"
+          },
+          "sessions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReadSessionDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ReadFilmDTO": {
         "type": "object",
         "properties": {
+          "idFilm": {
+            "type": "integer",
+            "format": "int32"
+          },
           "title": {
             "type": "string",
             "nullable": true
@@ -361,6 +1005,37 @@
           "consultHour": {
             "type": "string",
             "format": "date-time"
+          },
+          "sessions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReadSessionDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReadSessionDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAddressDTO": {
+        "type": "object",
+        "properties": {
+          "publicSpace": {
+            "type": "string",
+            "nullable": true
+          },
+          "number": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
