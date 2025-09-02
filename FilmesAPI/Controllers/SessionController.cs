@@ -36,7 +36,7 @@ namespace FilmsAPI.Controllers
             _context.Sessions.Add(session);
             _context.SaveChanges();
 
-            return CreatedAtAction(nameof(ReturnSessionForId), new { id = session.Id }, session);
+            return CreatedAtAction(nameof(ReturnSessionForId), new { IdFilm = session.IdFilm, IdCinema = session.IdCinema }, session);
         }
 
         /// <summary>
@@ -60,10 +60,11 @@ namespace FilmsAPI.Controllers
         /// <response code="200">Retorna a sessão esperado</response>
         /// <response code="404">Caso não exista nenhuma sessão com o código passado</response>
 
-        [HttpGet("{id}")]
-        public IActionResult ReturnSessionForId(int id)
+        [HttpGet("{IdFilm}/{IdCinema}")]
+        public IActionResult ReturnSessionForId(int IdFilm, int IdCinema)
         {
-            Session session = _context.Sessions.FirstOrDefault(session => session.Id == id);
+            Session session = _context.Sessions.FirstOrDefault(session => 
+                session.IdFilm == IdFilm && session.IdCinema == IdCinema);
 
             if (session != null)
             {

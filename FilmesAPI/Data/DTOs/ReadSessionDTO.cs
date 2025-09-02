@@ -2,6 +2,7 @@
 {
     public class ReadSessionDTO
     {
-        public int Id { get; set; }
+        public int IdFilm { get; set; }
+        public int IdCinema { get; set; }
     }
 }

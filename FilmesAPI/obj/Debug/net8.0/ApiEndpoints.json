@@ -394,13 +394,18 @@
   {
     "ContainingType": "FilmsAPI.Controllers.SessionController",
     "Method": "ReturnSessionForId",
-    "RelativePath": "Session/{id}",
+    "RelativePath": "Session/{IdFilm}/{IdCinema}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "IdFilm",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "IdCinema",
         "Type": "System.Int32",
         "IsRequired": true
       }

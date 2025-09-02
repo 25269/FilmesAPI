@@ -159,7 +159,7 @@
             <response code="200">Retorna as sessões esperadas</response>
             <response code="404">Caso não exista nenhuma sessão</response>
         </member>
-        <member name="M:FilmsAPI.Controllers.SessionController.ReturnSessionForId(System.Int32)">
+        <member name="M:FilmsAPI.Controllers.SessionController.ReturnSessionForId(System.Int32,System.Int32)">
             <summary>
             Retorna a sessão cadastrada conforme o Id utilizado como parâmetro
             </summary>
@@ -201,6 +201,66 @@
             <inheritdoc />
         </member>
         <member name="M:FilmsAPI.Migrations.SessionCinemaandFilm.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:FilmsAPI.Migrations.IdFilmnull">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.IdFilmnull.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.IdFilmnull.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.IdFilmnull.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:FilmsAPI.Migrations.CinemaandFilm">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.CinemaandFilm.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.CinemaandFilm.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.CinemaandFilm.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:FilmsAPI.Migrations.AddressForeignKeyinCinema">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.AddressForeignKeyinCinema.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.AddressForeignKeyinCinema.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.AddressForeignKeyinCinema.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:FilmsAPI.Migrations.RemoveForeignKeyfromCinemaAddress">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.RemoveForeignKeyfromCinemaAddress.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.RemoveForeignKeyfromCinemaAddress.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.RemoveForeignKeyfromCinemaAddress.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:FilmsAPI.Migrations.Deleterestrict">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.Deleterestrict.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.Deleterestrict.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmsAPI.Migrations.Deleterestrict.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

@@ -804,7 +804,7 @@
         }
       }
     },
-    "/Session/{id}": {
+    "/Session/{IdFilm}/{IdCinema}": {
       "get": {
         "tags": [
           "Session"
@@ -812,9 +812,17 @@
         "summary": "Retorna a sessão cadastrada conforme o Id utilizado como parâmetro",
         "parameters": [
           {
-            "name": "id",
+            "name": "IdFilm",
             "in": "path",
-            "description": "Código da sessão",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "IdCinema",
+            "in": "path",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1019,7 +1027,11 @@
       "ReadSessionDTO": {
         "type": "object",
         "properties": {
-          "id": {
+          "idFilm": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idCinema": {
             "type": "integer",
             "format": "int32"
           }
